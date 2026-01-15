@@ -6,9 +6,13 @@
 </head>
 <body>
     <h3>문자열, 암호 입력, 텍스트 영역</h3>
-    <form method="get" action="result.html">
+    <form method="post" action="result.html">
         아이디: &nbsp;
         <input type="text" value="" name="id"><br>
+        비번:
+        <input type="password" value="" name="password"><br>
+        나 보여?:
+        <input type="hidden" value="안보여" name="hide"><br>
         <input type="submit" value="회원가입">
     </form>
 </body>
