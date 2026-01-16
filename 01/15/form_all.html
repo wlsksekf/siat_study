@@ -13,7 +13,7 @@
             <input type="radio" name="gender" value="female">여성<br>
         </p>
         <p>과목:
-            <select name="job1" size="1">
+            <select name="job" size="1">
                 <option value="student">HTML</option>
                 <option value="company">CSS</option>
                 <option value="teacher">Javascript</option>
@@ -32,17 +32,15 @@
         <br>
         비고:
         <br>
-        <textarea rows="4" cols="40" placeholder="나는 텍스트에리어입니다"></textarea>
+        <textarea name="comments" rows="4" cols="40" placeholder="나는 텍스트에리어입니다"></textarea>
         <br>
         <input type="hidden" name="userIP" value="1234">
             파일 업로드(png)
         <br>
-        <p><input type="file" name="myfile"></p>
+        <p><input type="file" name="myfile" accept=".png"></p>
         <hr>
         <input type="submit" value="전송">
         <input type="reset" value="취소">
     </form>
-
-
 </body>
 </html>
