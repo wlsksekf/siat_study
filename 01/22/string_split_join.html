@@ -6,11 +6,12 @@
 </head>
 <body>
     <script>
-        let fruits = "사과, 바나나,포도";
-        let arr = fruits.split(",");
+        let fruits = "사과|바나나|포도";
+        let arr = fruits.split("|");
+        console.log(arr);
         document.body.innerHTML = arr + "<hr>";
 
-        let result = arr.join("/");
+        let result = arr.join(" / ");
         document.body.innerHTML += result;
     </script>
 </body>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>string 객체</title>
+</head>
+<body>
+    <h3>string 객체의 메소드 활용</h3>
+    <hr/>
+    <script>
+        let list = "";
+
+        const jumin = prompt("주민번호를 입력하세요:", "810908-3234567");
+
+        let test = jumin.slice(7, 8);
+        if (test === "1" || test === "3"){
+            list += "<div>남자</div>";
+            document.body.style.background = "#565698";
+        } else if (test === "2" || test === "4"){
+            list += "<div>여자</div>";
+            document.body.style.background = "mistyrose";
+        }
+
+        document.body.innerHTML += list;
+    </script>
+</body>
+</html>
