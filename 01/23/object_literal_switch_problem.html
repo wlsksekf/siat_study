@@ -41,12 +41,15 @@
                 for (const p in this){
                     if (p !== "print") {
                         output += "<tr><td>saram." + p + "</td><td>" + this[p];
-                        if (p === "age"){
-                            output += "세";
-                        } else if(p === "blood_type"){
-                            output += "형";
-                        } else if (p === "ki"){
-                            output += "cm";
+                        switch (p){
+                            case "age":
+                                output +="세";
+                                break;
+                            case "blood_type":
+                                output +="형";
+                                break;
+                            case "ki":
+                                output +="cm";
                         }
                         output += "</td></tr>";
                     }
