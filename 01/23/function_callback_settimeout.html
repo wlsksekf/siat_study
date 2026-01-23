@@ -6,9 +6,13 @@
   </head>
   <body>
     <script>
+      console.log("setTimeout 앞 - 1");
       setTimeout(function(){
         alert("안녕하세요! 3초 지났습니다.");
+        console.log("setTimeout 안 - 2");
       }, 3000);
+
+      console.log("setTimeout 뒤 - 3");
     </script>
   </body>
 </html>
