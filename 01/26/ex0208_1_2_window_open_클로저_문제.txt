@@ -19,7 +19,7 @@
 
     let newWindow = null;
 
-    function open_window() {  
+    function open_window() {
         const url = window.prompt(
             "원하는 URL 주소를 입력하시오",
             "http://www.naver.com"
@@ -41,7 +41,7 @@
     }
 
 
-1. 위 내용을 익명 함수에 넣고 즉시 실행 후 결과를 
+1. 위 내용을 익명 함수에 넣고 즉시 실행 후 결과를
 windowController 에 저장합니다.
 
 2. 익명 함수에서 리턴되는 것은 배열로 {open_window, close_window} 입니다.
