@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<script src="js/ex0213.js" defer></script>
 </head>
 <style>
     /* 기본 스타일 초기화 및 배경 설정 */
@@ -158,26 +159,5 @@ input[type="submit"]:hover {
         <input type="reset" value="초기화">
         <input type="submit" value="제출">
     </form>
-    <script>
-        for(i=0; i<3; i++){
-        }
-            function updateAll(){
-                const a = document.querySelectorAll(".price")[0].textContent;
-                const b = document.getElementById(`book1`).value;
-                
-                aResult = a.replace(/,|원/g, "");
-                
-                console.log(aResult);
-                console.log(b);
-                
-                document.getElementById(`book1Total`).value = Number(aResult) * Number(b);
-                // document.getElementById("totalNumber").value = ;
-                // document.getElementById("totalPrice").value = ;
-                
-            }
-
-        document.querySelector('form').addEventListener('input', updateAll);
-    </script>
-
 </body>
 </html>
