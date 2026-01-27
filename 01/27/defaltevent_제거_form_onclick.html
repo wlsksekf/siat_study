@@ -3,37 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <link href="css/ex0214.css" rel="stylesheet">
-<title></title>
+<title>과제</title>
 </head>
 <script>
-    window.onload = function() {
-        const form = document.getElementById('my-form');
-        
-        form.addEventListener('submit', function(e) {
-            const name = document.getElementById('name');
-            const pass = document.getElementById('pass');
-            const passCheck = document.getElementById('pass-check');
+    window.onload = function(){
+        const form1 = document.getElementById('my-form');
 
-            const fields = [
-                { el: name, msg: '이름을 입력하세요' },
-                { el: pass, msg: '비밀번호를 입력하세요' },
-                { el: passCheck, msg: '비밀번호 확인을 입력하세요' }
+        form1.addEventListener('submit', function(e){
+            const uName = document.getElementById('name');
+            const pw = document.getElementById('pass');
+            const pwck = document.getElementById('pass-check');
+
+            const checkList = [
+                { target: uName, notice: '이름을 입력하세요' },
+                { target: pw, notice: '비밀번호를 입력하세요' },
+                { target: pwck, notice: '비밀번호 확인을 입력하세요' }
             ];
 
-            for (const field of fields) {
-                if (field.el.value.trim() === "") {
-                    alert(field.msg);
-                    field.el.focus();
+            for (let i=0;i<checkList.length;i++){
+                const item = checkList[i];
+                if (item.target.value.trim() === ""){
+                    alert(item.notice);
+                    item.target.focus();
                     e.preventDefault();
                     return;
                 }
             }
 
-            if (pass.value !== passCheck.value) {
+            if (pw.value !== pwck.value){
                 alert('비밀번호가 다릅니다. 다시 입력해 주세요');
-                pass.value = "";
-                passCheck.value = "";
-                pass.focus();
+                pw.value = "";
+                pwck.value = "";
+                pw.focus();
                 e.preventDefault();
                 return;
             }
