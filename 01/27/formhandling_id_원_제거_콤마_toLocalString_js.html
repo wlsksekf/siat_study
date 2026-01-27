@@ -129,15 +129,48 @@ input[type="submit"]:hover {
             </tr>
             <tr>
                 <td>4차 산업</td>
-                <td><input id="price">30,000원</td>
+                <td class="price">30,000원</td>
                 <td><input id="book1" type="text" value="0"
                             onclick="this.select();"></td>
-                <td><input id="bookTotal" type="text" value="0" readonly>원</td>            
+                <td><input id="book1Total" type="text" value="0" readonly>원</td>            
+            </tr>
+            <tr>
+                <td>다이어트</td>
+                <td class="price">27,000원</td>
+                <td><input id="book2" type="text" value="0"
+                            onclick="this.select();"></td>
+                <td><input id="book2Total" type="text" value="0" readonly>원</td>            
+            </tr>
+            <tr>
+                <td>윤식당</td>
+                <td class="price">25,000원</td>
+                <td><input id="book3" type="text" value="0"
+                            onclick="this.select();"></td>
+                <td><input id="book3Total" type="text" value="0" readonly>원</td>            
+            </tr>
+            <tr>
+                <td>합계</td>
+                <td>&nbsp;</td>
+                <td><input id="totalNumber" type="text" value="0" readonly></td>        
+                <td><input id="totalPrice" type="text" value="0" readonly></td>        
             </tr>
         </table>
+        <input type="reset" value="초기화">
+        <input type="submit" value="제출">
     </form>
     <script>
+        for(i=1; i<4; i++){
+        }
         function updateAll(){
+            const a = document.querySelectorAll(".price");
+            const b = document.getElementById(`book1`);
+
+            console.log(a[0].textContent);
+            console.log(b.value);
+    
+            document.getElementById(`book1Total`).value = Number(a.value) * Number(b.value);
+            // document.getElementById("totalNumber").value = ;
+            // document.getElementById("totalPrice").value = ;
 
         }
 

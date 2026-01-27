@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+    <h1>콤마</h1>
+    <h1>25,000,000원</h1>
+    <div id="output"></div>
+<script>
+    const output = document.getElementById("output");
+
+    const data = "25,000,000원";
+
+    let dataResult = data.replace(",", "");
+    output.innerHTML += `${data} => ${dataResult}<hr>`;
+</script>
+</body>
+</html>
