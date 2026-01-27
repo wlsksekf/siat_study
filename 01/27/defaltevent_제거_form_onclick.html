@@ -6,31 +6,28 @@
 <title>과제</title>
 </head>
 <script>
-    window.onload = function(){
-        const form1 = document.getElementById('my-form');
+    window.onload = function() {
+        const form = document.getElementById('my-form');
 
-        form1.addEventListener('submit', function(e){
-            const uName = document.getElementById('name');
-            const pw = document.getElementById('pass');
-            const pwck = document.getElementById('pass-check');
+        form.addEventListener('submit', function(e) {
+            const inputs = form.querySelectorAll('input');
 
-            const checkList = [
-                { target: uName, notice: '이름을 입력하세요' },
-                { target: pw, notice: '비밀번호를 입력하세요' },
-                { target: pwck, notice: '비밀번호 확인을 입력하세요' }
-            ];
+            for (let i = 0; i < inputs.length; i++) {
+                const target = inputs[i];
 
-            for (let i=0;i<checkList.length;i++){
-                const item = checkList[i];
-                if (item.target.value.trim() === ""){
-                    alert(item.notice);
-                    item.target.focus();
+                if (target.value.trim() === "") {
+                    const label = target.getAttribute('placeholder') || '항목';
+                    alert(label + '을(를) 입력하세요');
+                    target.focus();
                     e.preventDefault();
                     return;
                 }
             }
 
-            if (pw.value !== pwck.value){
+            const pw = document.getElementById('pass');
+            const pwck = document.getElementById('pass-check');
+
+            if (pw.value !== pwck.value) {
                 alert('비밀번호가 다릅니다. 다시 입력해 주세요');
                 pw.value = "";
                 pwck.value = "";
