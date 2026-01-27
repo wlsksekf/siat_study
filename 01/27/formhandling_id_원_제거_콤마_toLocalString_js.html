@@ -159,20 +159,22 @@ input[type="submit"]:hover {
         <input type="submit" value="제출">
     </form>
     <script>
-        for(i=1; i<4; i++){
+        for(i=0; i<3; i++){
         }
-        function updateAll(){
-            const a = document.querySelectorAll(".price");
-            const b = document.getElementById(`book1`);
-
-            console.log(a[0].textContent);
-            console.log(b.value);
-    
-            document.getElementById(`book1Total`).value = Number(a.value) * Number(b.value);
-            // document.getElementById("totalNumber").value = ;
-            // document.getElementById("totalPrice").value = ;
-
-        }
+            function updateAll(){
+                const a = document.querySelectorAll(".price")[0].textContent;
+                const b = document.getElementById(`book1`).value;
+                
+                aResult = a.replace(/,|원/g, "");
+                
+                console.log(aResult);
+                console.log(b);
+                
+                document.getElementById(`book1Total`).value = Number(aResult) * Number(b);
+                // document.getElementById("totalNumber").value = ;
+                // document.getElementById("totalPrice").value = ;
+                
+            }
 
         document.querySelector('form').addEventListener('input', updateAll);
     </script>
