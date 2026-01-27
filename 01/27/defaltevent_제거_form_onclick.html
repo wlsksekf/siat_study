@@ -14,25 +14,19 @@
             const pass = document.getElementById('pass');
             const passCheck = document.getElementById('pass-check');
 
-            if (name.value.trim() === "") {
-                alert('이름을 입력하세요');
-                name.focus();
-                e.preventDefault();
-                return;
-            }
+            const fields = [
+                { el: name, msg: '이름을 입력하세요' },
+                { el: pass, msg: '비밀번호를 입력하세요' },
+                { el: passCheck, msg: '비밀번호 확인을 입력하세요' }
+            ];
 
-            if (pass.value.trim() === "") {
-                alert('비밀번호를 입력하세요');
-                pass.focus();
-                e.preventDefault();
-                return;
-            }
-
-            if (passCheck.value.trim() === "") {
-                alert('비밀번호 확인을 입력하세요');
-                passCheck.focus();
-                e.preventDefault();
-                return;
+            for (const field of fields) {
+                if (field.el.value.trim() === "") {
+                    alert(field.msg);
+                    field.el.focus();
+                    e.preventDefault();
+                    return;
+                }
             }
 
             if (pass.value !== passCheck.value) {
