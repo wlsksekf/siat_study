@@ -95,7 +95,7 @@ function move() {
 
     if (j1.value.length === 6) {
         if (isNaN(j1.value)) {
-            alert("숫자를 입력하세요");
+            alert("YYMMDD 형식으로 입력하세요");
             j1.value = "";
             j1.focus();
         } else {
