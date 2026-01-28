@@ -21,8 +21,8 @@
 
     icons.addEventListener('change', show);
 
-    function show() {
-        document.querySelector('#iconImg').src = this.value;
+    function show(e) {
+        document.querySelector('#iconImg').src = e.target.value;
     }
 </script>
 </body>
