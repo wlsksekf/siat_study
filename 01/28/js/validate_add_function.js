@@ -53,14 +53,46 @@ window.onload = function() {
 
 function check() {
     const f = document.myform;
-    const inputs = f.querySelectorAll('input[type="text"], textarea');
 
-    for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i].value.trim() === "") {
-            alert("입력되지 않은 항목이 있습니다. 모든 항목을 입력하세요.");
-            inputs[i].focus();
-            return false;
-        }
+    if (f.id.value.trim() === "") {
+        alert("ID를 입력하세요");
+        f.id.focus();
+        return false;
+    }
+    if (f.jumin1.value.trim() === "") {
+        alert("주민번호 앞자리를 입력하세요");
+        f.jumin1.focus();
+        return false;
+    }
+    if (f.jumin2.value.trim() === "") {
+        alert("주민번호 뒷자리를 입력하세요");
+        f.jumin2.focus();
+        return false;
+    }
+    if (f.email.value.trim() === "") {
+        alert("이메일을 입력하세요");
+        f.email.focus();
+        return false;
+    }
+    if (f.domain.value.trim() === "") {
+        alert("도메인을 입력하세요");
+        f.domain.focus();
+        return false;
+    }
+    if (f.post1.value.trim() === "") {
+        alert("우편번호를 입력하세요");
+        f.post1.focus();
+        return false;
+    }
+    if (f.address.value.trim() === "") {
+        alert("주소를 입력하세요");
+        f.address.focus();
+        return false;
+    }
+    if (f.intro.value.trim() === "") {
+        alert("자기소개를 입력하세요");
+        f.intro.focus();
+        return false;
     }
 
     let hobbyCount = 0;
@@ -95,7 +127,7 @@ function move() {
 
     if (j1.value.length === 6) {
         if (isNaN(j1.value)) {
-            alert("YYMMDD 형식으로 입력하세요");
+            alert("숫자를 입력하세요");
             j1.value = "";
             j1.focus();
         } else {
@@ -103,7 +135,15 @@ function move() {
         }
     }
 
-    if (j2.value.length > 0) {
+    if (j2.value.length >= 1) {
+        const genderDigit = j2.value[0];
+        if (genderDigit === "1" || genderDigit === "3") {
+            document.getElementById("gender1").checked = true;
+        }
+        if (genderDigit === "2" || genderDigit === "4") {
+            document.getElementById("gender2").checked = true;
+        }
+
         if (isNaN(j2.value)) {
             alert("숫자를 입력하세요");
             j2.value = "";
