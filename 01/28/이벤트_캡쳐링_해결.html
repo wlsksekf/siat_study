@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title>이벤트 버블링 해결</title>
+<title>이벤트 캡쳐링 해결</title>
 <style>
     div:nth-child(1){
         border: 5px solid red;
@@ -35,15 +35,12 @@
             = ${e.currentTarget.id}\n이벤트 발생 객체 태그 이름
             = ${e.target.tagName}`;
             alert(message);
-        }
 
-        function handler(e){
             e.stopPropagation();
         }
 
         for(let i=0; i<items.length; i++){
-            items[i].addEventListener('click', somthing, false);
-            items[i].addEventListener('click', handler, false);
+            items[i].addEventListener('click', somthing, true);
         }
     </script>
 </body>
