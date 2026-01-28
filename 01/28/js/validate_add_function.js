@@ -18,7 +18,6 @@
 // 5. post() : "이곳은 우편번호 검색하는 곳입니다."라는 팝업창(width=400, height=500)이 나타납니다.
 // 보여주는 페이지는 "post.html"입니다.
 
-
 window.onload = function() {
     const myform = document.getElementById('myform');
     const doubleCheckBtn = document.getElementById('doubleCheck');
@@ -38,8 +37,8 @@ window.onload = function() {
     jumin1.onkeyup = function() {
         move();
     };
-    
-    jumin2.onblur = function() {
+
+    jumin2.onkeyup = function() {
         move();
     };
 
@@ -55,29 +54,25 @@ window.onload = function() {
 function check() {
     const f = document.myform;
     const inputs = f.querySelectorAll('input[type="text"], textarea');
-    
-    for (let i=0; i<inputs.length; i++) {
+
+    for (let i = 0; i < inputs.length; i++) {
         if (inputs[i].value.trim() === "") {
-            alert("모든 항목을 입력하세요.");
+            alert("입력되지 않은 항목이 있습니다. 모든 항목을 입력하세요.");
             inputs[i].focus();
             return false;
         }
     }
 
-    if (!f.gender[0].checked && !f.gender[1].checked) {
-        alert("성별을 선택하세요.");
-        return false;
-    }
-
     let hobbyCount = 0;
-    for (let i=0; i<f.hobby.length; i++) {
-        if (f.hobby[i].checked) {
+    const hobbies = document.getElementsByName("hobby");
+    for (let i = 0; i < hobbies.length; i++) {
+        if (hobbies[i].checked) {
             hobbyCount++;
         }
     }
 
     if (hobbyCount < 2) {
-        alert("취미는 반드시 2개 이상 체크해야 합니다.");
+        alert("취미는 반드시 2개이상 체크해야 합니다.");
         return false;
     }
 
@@ -85,15 +80,12 @@ function check() {
 }
 
 function idcheck() {
-    const idInput = document.getElementById('id');
-    const idValue = idInput.value;
-
-    if (idValue === "") {
+    const id = document.getElementById('id');
+    if (id.value.trim() === "") {
         alert("ID를 입력하세요");
-        idInput.focus();
+        id.focus();
     } else {
-        const url = "idcheck.html?id=" + idValue;
-        window.open(url, "idwin", "width=300, height=250");
+        window.open("idcheck.html?id=" + id.value, "idwin", "width=300,height=250");
     }
 }
 
@@ -111,10 +103,12 @@ function move() {
         }
     }
 
-    if (j2.value.length > 0 && isNaN(j2.value)) {
-        alert("숫자를 입력하세요");
-        j2.value = "";
-        j2.focus();
+    if (j2.value.length > 0) {
+        if (isNaN(j2.value)) {
+            alert("숫자를 입력하세요");
+            j2.value = "";
+            j2.focus();
+        }
     }
 }
 
@@ -123,16 +117,16 @@ function domain1() {
     const domain = document.getElementById('domain');
 
     if (sel.value === "") {
-        domain.value = "";
         domain.readOnly = false;
+        domain.value = "";
         domain.focus();
     } else {
-        domain.value = sel.value;
         domain.readOnly = true;
+        domain.value = sel.value;
     }
 }
 
 function post() {
     alert("이곳은 우편번호 검색하는 곳입니다.");
-    window.open("post.html", "postwin", "width=400, height=500");
+    window.open("post.html", "postwin", "width=400,height=500");
 }
