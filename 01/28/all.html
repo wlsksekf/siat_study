@@ -53,16 +53,22 @@
 
             <label for="post1">우편번호</label>
             <div class="input-group">
-            <input type="text" placeholder="앞자리" maxLength="6" name="jumin1" id="jumin1">
-            <span class="dash">-</span>
-            <input type="text" placeholder="뒷자리" maxLength="7" name="jumin2" id="jumin2">
+            <input type="text" maxLength="5" name="post1" id="post1">
+            <input type="button" value="우편검색" id="postSearch">
             </div>
 
+            <label for="address">주소</label>
+            <input type="text" name="address" id="address">
 
+            <label for="intro">자기소개</label>
+            <textarea name="intro" id="intro"></textarea>
+
+            <div class="clearfix">
+                <button type="submit" class="signupbtn">회원가입</button>
+                <button type="reset" class="cancelbtn">취소</button>
+            </div>
             </fieldset>
-
         </div>
-
     </form>    
 </body>
 </html>        
