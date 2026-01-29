@@ -16,7 +16,7 @@
         <option value="Incheon">Incheon</option>
         <option value="Daegu">Daegu</option>
     </select>
-    
+
     <button id="btn">데이터 불러오기</button>
     <div id="status">상태: 대기 중</div>
     <table>
@@ -34,7 +34,7 @@
         const btn = document.getElementById("btn");
         const tbody = document.getElementById("tbody");
         const status = document.getElementById("status");
-        
+
         const citySelect = document.getElementById("city");
 
         btn.addEventListener("click", async function() {
@@ -66,7 +66,7 @@
                 });
 
                 if (htmlContent === "") {
-                    tbody.innerHTML = `<tr><td colspan="4">해당 도시의 사용자가 없습니다.</td></tr>`;
+                    tbody.innerHTML = `<tr><td colspan="4">이 도시의 사용자가 없습니다.</td></tr>`;
                 } else {
                     tbody.innerHTML = htmlContent;
                 }
