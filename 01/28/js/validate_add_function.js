@@ -161,9 +161,13 @@ function domain1() {
         domain.readOnly = true;
         domain.value = sel.value;
     }
+    document.getElementById('sel').addEventListener('change', domain1);
 }
+
 
 function post() {
     alert("이곳은 우편번호 검색하는 곳입니다.");
     window.open("post.html", "postwin", "width=400,height=500");
+    
+    document.getElementById('postSearch').addEventListener('click', post);
 }
