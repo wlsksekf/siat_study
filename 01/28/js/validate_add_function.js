@@ -124,7 +124,7 @@ function idcheck() {
 function move() {
     const j1 = document.getElementById('jumin1');
     const j2 = document.getElementById('jumin2');
-
+    
     if (j1.value.length === 6) {
         if (isNaN(j1.value)) {
             alert("숫자를 입력하세요");
@@ -135,19 +135,16 @@ function move() {
         }
     }
 
-    if (j2.value.length >= 1) {
-        const genderDigit = j2.value[0];
-        if (genderDigit === "1" || genderDigit === "3") {
-            document.getElementById("gender1").checked = true;
-        }
-        if (genderDigit === "2" || genderDigit === "4") {
-            document.getElementById("gender2").checked = true;
-        }
-
-        if (isNaN(j2.value)) {
+    const pattern2 = /^[1-4][0-9]{6}$/;
+    
+    if (j2.value.length === 7) {
+        if (!pattern2.test(j2.value)) {
             alert("숫자를 입력하세요");
-            j2.value = "";
+            j2.value = '';
             j2.focus();
+        } else {
+            const genderNum = 2 - (Number(j2.value[0]) % 2);
+            document.getElementById(`gender${genderNum}`).checked = true;
         }
     }
 }
