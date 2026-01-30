@@ -29,4 +29,3 @@ print(is_Student_int)
 print(bool(0))
 print(bool(""))
 print(bool(None))
-
